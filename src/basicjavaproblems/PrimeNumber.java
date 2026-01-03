@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Question:-03: Find out the Prime number. */
 package basicjavaproblems;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Awerty
- */
+
 public class PrimeNumber {
     static boolean isPrime(int num){
         if (num <= 1){
@@ -34,6 +27,6 @@ public class PrimeNumber {
         } else {
             System.out.println(number + " is a non-prime number.");
         }
-        
+        input.close();
     }
 }

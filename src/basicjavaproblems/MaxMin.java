@@ -1,38 +1,44 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Question:-06: Find out the Max-Min number among n number of values.
  */
 package basicjavaproblems;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- *
- * @author Awerty
- */
 public class MaxMin {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("How many numbers do you wanna check? ");
+
+        System.out.print("How many numbers do you want to check? ");
         int n = input.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < arr.length; i++) {            
-            arr[i] = (int) (Math.random() * 1000);
+
+        if (n <= 0) {
+            System.out.println("Number of elements must be greater than 0.");
+            return;
         }
-        System.out.println("Given numbers: " + Arrays.toString(arr));
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = input.nextInt();
+        }
+
         int max = arr[0];
         int min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (max < arr[i] ) {
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) {
                 max = arr[i];
-            } else if ( min > arr[i]){
-                    
-                    min = arr[i];
+            }
+            if (arr[i] < min) {
+                min = arr[i];
             }
         }
-        System.out.println("Maximum number : " + max);
-        System.out.println("Minimum number : " + min);
+
+        System.out.println("Maximum number: " + max);
+        System.out.println("Minimum number: " + min);
+
+        input.close();
     }
 }
